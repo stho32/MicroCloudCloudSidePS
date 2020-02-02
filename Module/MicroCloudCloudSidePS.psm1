@@ -10,10 +10,11 @@ $global:MICROCLOUD_VmName = "MicroVM-"
 
 # In case we are in a production scenario, we want the latest version of the 
 # integration module. 
-if ( $PSScriptRoot -eq "C:\MicroCloud\MicroCloudCloudSidePS" )
-try {
-    git pull
-} catch {
+if ( $PSScriptRoot -eq "C:\MicroCloud\MicroCloudCloudSidePS" ) {
+    try {
+        git pull
+    } catch {
+    }
 }
 
 if ( $env:ComputerName -ne $global:MICROCLOUD_VmName ) {
