@@ -8,8 +8,6 @@ Set-Location $PSScriptRoot
 
 $global:MICROCLOUD_VmName = "MicroVM-"
 
-. C:\MicroCloud\integration.ps1
-
 # In case we are in a production scenario, we want the latest version of the 
 # integration module. 
 if ( $PSScriptRoot -eq "C:\MicroCloud\MicroCloudCloudSidePS" )
@@ -18,9 +16,9 @@ try {
 } catch {
 }
 
-
 if ( $env:ComputerName -ne $global:MICROCLOUD_VmName ) {
     Rename-Computer -NewName $global:MICROCLOUD_VmName -Force -Restart
+    exit
 }
 
 Push-Location $PSScriptRoot
