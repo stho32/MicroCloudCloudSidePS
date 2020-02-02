@@ -17,7 +17,7 @@ if ( $PSScriptRoot -eq "C:\MicroCloud\MicroCloudCloudSidePS" ) {
     }
 }
 
-if ( $env:ComputerName -ne $global:MICROCLOUD_VmName ) {
+if ( -not $global:MICROCLOUD_VmName.StartsWith($env:ComputerName) ) {
     Rename-Computer -NewName $global:MICROCLOUD_VmName -Force -Restart
     exit
 }
