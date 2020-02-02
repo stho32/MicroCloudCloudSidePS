@@ -14,6 +14,6 @@ function Register-CVM {
         }
         $uri = $uri + "Vm/IAm?name=" + $env:ComputerName
 
-        Invoke-WebRequest -Uri $global:MICROCLOUD_ApiUrl -UseBasicParsing
+        Invoke-WebRequest -Uri $uri -UseBasicParsing
     }
 }
