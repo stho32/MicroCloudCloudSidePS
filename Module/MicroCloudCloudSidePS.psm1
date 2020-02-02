@@ -6,7 +6,7 @@
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
-$global:MICROCLOUD_VmName = "MicroVM-"
+#$global:MICROCLOUD_VmName = "MicroVM-"
 
 # In case we are in a production scenario, we want the latest version of the 
 # integration module. 
