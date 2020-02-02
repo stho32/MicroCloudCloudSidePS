@@ -12,7 +12,7 @@ $global:MICROCLOUD_ApiUrl = '$APIURL$'
 Import-Module C:\MicroCloud\MicroCloudCloudSidePS\Module\MicroCloudCloudSidePS.psm1
 
 # We run this after the computer has his real new vm name applied
-if ( $global:MICROCLOUD_VmName.StartsWith($env:COMPUTERNAME) ) {
+if ( $global:MICROCLOUD_VmName -like "$env:ComputerName*" ) {
 
     # Add Port Forwarding for Remote Desktop to the entrance router
     #Add-CVMPortForwarding -MyPort 3389
