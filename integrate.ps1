@@ -20,7 +20,7 @@ Set-ItemProperty $RegPath "DefaultUsername" -Value $DefaultUsername -type String
 Set-ItemProperty $RegPath "DefaultPassword" -Value $DefaultPassword -type String
 
 # Create a scheduled task that is run every 5 minutes that executes the integration
-$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NonInteractive -NoLogo -NoProfile -File 'C:\MicroCloud\integration.ps1'"
+$Action = New-ScheduledTaskAction -Execute 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' -Argument "-ExecutionPolicy ByPass -NoProfile -File 'C:\MicroCloud\integration.ps1'"
 $Trigger = New-ScheduledTaskTrigger -AtLogOn
 $Settings = New-ScheduledTaskSettingsSet
 $Task = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $Settings
