@@ -12,7 +12,7 @@ function Register-CVM {
         if ( -not ($uri.EndsWith("/")) ) {
             $uri = $uri + "/"
         }
-        $uri = $uri + "Vm/IAm?name=" + $env:ComputerName
+        $uri = $uri + "Vm/IAm?name=" + $global:MICROCLOUD_VmName
 
         Invoke-WebRequest -Uri $uri -UseBasicParsing
     }
