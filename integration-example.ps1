@@ -11,6 +11,11 @@ $global:MICROCLOUD_ApiUrl = '$APIURL$'
 
 Import-Module C:\MicroCloud\MicroCloudCloudSidePS\Module\MicroCloudCloudSidePS.psm1
 
+if ( $global:MICROCLOUD_VmName -notlike "$env:ComputerName*" ) {
+    Rename-Computer -NewName $global:MICROCLOUD_VmName -Force -Restart
+    exit
+}
+
 # We run this after the computer has his real new vm name applied
 if ( $global:MICROCLOUD_VmName -like "$env:ComputerName*" ) {
 

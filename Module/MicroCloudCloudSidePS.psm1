@@ -17,11 +17,6 @@ if ( $PSScriptRoot -eq "C:\MicroCloud\MicroCloudCloudSidePS" ) {
     }
 }
 
-if ( $global:MICROCLOUD_VmName -notlike "$env:ComputerName*" ) {
-    Rename-Computer -NewName $global:MICROCLOUD_VmName -Force -Restart
-    exit
-}
-
 Push-Location $PSScriptRoot
 
 Get-ChildItem -Filter "*.ps1" -Recurse | 
