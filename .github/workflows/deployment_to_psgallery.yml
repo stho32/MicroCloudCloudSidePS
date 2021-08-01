@@ -11,5 +11,5 @@ jobs:
         
       - name: Publishing
         run: |
-          Publish-Module -Name "MicroCloudCloudSidePS" -Path 'Module/' -NuGetApiKey ${{ secrets.PSGALLERY_SECRET }}
+          Publish-Module -Path 'MicroCloudCloudSidePS/' -NuGetApiKey ${{ secrets.PSGALLERY_SECRET }}
         shell: pwsh
