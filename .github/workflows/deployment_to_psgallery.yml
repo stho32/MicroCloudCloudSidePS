@@ -15,7 +15,7 @@ jobs:
       - name: Change module version
         run : | 
             $content = Get-Content ./MicroCloudCloudSidePS/MicroCloudCloudSidePS.psd1 -Raw
-            $content = $content.Replace( "$$TAG$$", $Env:RELEASE_VERSION )
+            $content = $content.Replace( '$$TAG$$', $Env:RELEASE_VERSION )
             $content | Set-Content ./MicroCloudCloudSidePS/MicroCloudCloudSidePS.psd1
         shell: pwsh
 
